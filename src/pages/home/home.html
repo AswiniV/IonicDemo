@@ -12,32 +12,28 @@
   <div class="bar bar-subheader ">
     <h1 class="title">Its my First ionic app</h1>
   </div>
-  <div>
-    <h2 class="positive"></h2>
-    <h4>Ionic is the beautiful, open source mobile SDK for developing native and progressive web apps.</h4>
-  </div>
-  <div>
-    <h2 class="positive">Install ionic</h2>
-    <h4>Step One : Install Node.js and Cordova</h4>
+  <ion-list radio-group>
+    <ion-list-header>
+      Language
+    </ion-list-header>
+  
+    <ion-item>
+      <ion-label>Go</ion-label>
+      <ion-radio checked="true" value="go"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Rust</ion-label>
+      <ion-radio value="rust"></ion-radio>
+    </ion-item>
+  
+    <ion-item>
+      <ion-label>Python</ion-label>
+      <ion-radio value="python" ></ion-radio>
+    </ion-item>
+  </ion-list>
 
-    <h6><code>$ npm install -g cordova ionic </code></h6>
-
-  </div>
-  <div>
-    <h4>Step Two : Start a project.</h4>
-
-    <h6><code>$ ionic start myApp sidemenu </code></h6>
-
-  </div>
-  <div>
-    <h4>Step Three : Run the project.</h4>
-
-    <h6><code>$ ionic serve</code></h6>
-
-  </div>
-
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <!-- <button ion-button secondary menuToggle>Toggle Menu</button>
 
   <ion-item>
     <h1 *ngIf=myDate>{{myDate}}</h1>
@@ -46,13 +42,13 @@
   <ion-item>
     <ion-label>Date</ion-label>
     <ion-datetime displayFormat="MMM DD, YYYY" [(ngModel)]="myDate"></ion-datetime>
-  </ion-item>
-
+  </ion-item> -->
+<!-- 
   <ion-item>
 
-  </ion-item>
+  </ion-item> -->
 
-  <ion-list radio-group>
+  <!-- <ion-list radio-group>
     <ion-list-header>
       Choose a programming Language
     </ion-list-header>
@@ -71,9 +67,9 @@
       <ion-label>Swift</ion-label>
       <ion-radio value="python"></ion-radio>
     </ion-item>
-  </ion-list>
+  </ion-list> -->
 
-  <ion-item>
+  <!-- <ion-item>
     <ion-label>What do you want to be?</ion-label>
   </ion-item>
 
@@ -85,5 +81,36 @@
   <ion-item>
     <ion-label>android developer</ion-label>
     <ion-checkbox disabled="true"></ion-checkbox>
-  </ion-item>
+  </ion-item> -->
+  <div padding>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Kittens
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Puppies
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+  
+  <div [ngSwitch]="pet">
+    <ion-list *ngSwitchCase="'puppies'">
+      <ion-item>
+        <!-- <ion-thumbnail item-start>
+          <img src="home\thumbnail-puppy-1.png">
+        </ion-thumbnail> -->
+        <h2>Ruby</h2>
+      </ion-item>
+    </ion-list>
+  
+    <ion-list *ngSwitchCase="'kittens'">
+      <ion-item>
+        <!-- <ion-thumbnail item-start>
+          <img src="thumbnail-kitten-1.png">
+        </ion-thumbnail> -->
+        <h2>Luna</h2>
+      </ion-item>
+    </ion-list>
+  </div>
+  
 </ion-content>
